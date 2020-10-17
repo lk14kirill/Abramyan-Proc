@@ -1,0 +1,13 @@
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.csprojAssemblyReference.cache
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.AssemblyInfoInputs.cache
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.AssemblyInfo.cs
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.csproj.CoreCompileInputs.cache
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.exe
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.deps.json
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.runtimeconfig.json
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.runtimeconfig.dev.json
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.dll
+C:\Users\addky\source\repos\Dz4\Dz4\bin\Debug\netcoreapp3.1\Dz4.pdb
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.dll
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.pdb
+C:\Users\addky\source\repos\Dz4\Dz4\obj\Debug\netcoreapp3.1\Dz4.genruntimeconfig.cache
