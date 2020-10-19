@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -7,6 +8,7 @@ namespace Dz4
 {
     class Program
     {
+
         #region Proc16
         static int Signproc16(float x)
         {
@@ -253,7 +255,7 @@ namespace Dz4
 
 
         #endregion
-        #region Proc52-55
+        #region Proc52-53
 
        static bool IsLeapYear(int Y)
         {
@@ -286,21 +288,102 @@ namespace Dz4
         }
         static void Proc53()
         {
-            int year = int.Parse(Console.ReadLine()));
+            int year = int.Parse(Console.ReadLine());
             int m1 = int.Parse(Console.ReadLine());
             int m2 = int.Parse(Console.ReadLine());
             int m3 = int.Parse(Console.ReadLine());
             Console.WriteLine(MonthDays(m1,year));
             Console.WriteLine(MonthDays(m2, year));
             Console.WriteLine(MonthDays(m3, year));
+        }
+        #endregion
+        #region Proc56-59
 
+        static void TakeDoubles(out double[] Values)
+        {
+            Values = new double[7];
+            double x1 = double.Parse(Console.ReadLine());
+            double y1 = double.Parse(Console.ReadLine());
+            double x2 = double.Parse(Console.ReadLine());
+            double y2 = double.Parse(Console.ReadLine());
+            double x3 = double.Parse(Console.ReadLine());
+            double y3 = double.Parse(Console.ReadLine());
+            double x4 = double.Parse(Console.ReadLine());
+            double y4 = double.Parse(Console.ReadLine());
+            Values[0] = x1;
+            Values[1] = y1;
+            Values[2] = x2;
+            Values[3] = y2;
+            Values[4] = x3;
+            Values[5] = y3;
+            Values[6] = x4;
+            Values[7] = y4;
+        }
+        static double Leng(double xA, double yA, double xB, double yB)
+        {
+            return Math.Sqrt(Math.Pow((xA - xB), 2) + Math.Pow((yA - yB), 2));
+        }
+
+
+
+        static void Proc56()
+        {
+            TakeDoubles(out double[] Values);
+            Console.WriteLine(Leng(Values[0], Values[1], Values[2], Values[3]));
+            Console.WriteLine(Leng(Values[0], Values[1], Values[4], Values[5]));
+            Console.WriteLine(Leng(Values[0], Values[1], Values[6], Values[7]));
 
 
         }
+        static double Perim(double xA, double yA, double xB, double yB,double xC,double yC)
+        {
+            double a = Leng(xA, yA, xB, yB);
+            double b = Leng(xA, yA, xC ,yC);
+            double c = Leng(xB, yB, xC, yC);
+            return a + b + c;
+        }
+        static void Proc57()
+        {
+            TakeDoubles(out double[] Values);
+            Console.WriteLine(Perim(Values[0], Values[1], Values[2], Values[3], Values[4], Values[5]));
+            Console.WriteLine(Perim(Values[0], Values[1], Values[3], Values[4], Values[6], Values[7]));
+            Console.WriteLine(Perim(Values[0], Values[1], Values[4], Values[5], Values[6], Values[7]));
+        }
+        static double Area(double xA, double yA, double xB, double yB, double xC, double yC )
+        {
+            double p = Perim(xA, yA, xB, yB, xC, yC);
+            double AB = Math.Abs(Leng(xA, yA, xB, yB));
+            double AC = Leng(xA, yA, xB, yB);
+            double BC = Leng(xB, yB, xC, yC);
+            return Math.Sqrt(p*(p-AB)*(p-AC)*(p-BC));
+        }
+
+        static void Proc58()
+        {
+            TakeDoubles(out double[] Values);
+            Console.WriteLine(Area(Values[0], Values[1], Values[2], Values[3], Values[4], Values[5]));
+            Console.WriteLine(Area(Values[0], Values[1], Values[3], Values[4], Values[6], Values[7]));
+            Console.WriteLine(Area(Values[0], Values[1], Values[4], Values[5], Values[6], Values[7]));
+        }
+        static double Dist(double xP, double yP,double xA, double yA, double xB, double yB)
+        {
+            double Spab = Area(xP, yP, xA, yA, xB, yB);
+            double AB = Math.Abs(Leng(xA, yA, xB, yB));
+
+            return 2 * Spab / AB;
+        }
+        static void Proc59()
+        {
+            TakeDoubles(out double[] Values);
+            Console.WriteLine(Area(Values[0], Values[1], Values[2], Values[3], Values[4], Values[5]));
+            Console.WriteLine(Area(Values[0], Values[1], Values[2], Values[3], Values[6], Values[7]));
+            Console.WriteLine(Area(Values[0], Values[1], Values[4], Values[5], Values[6], Values[7]));
+        }
+
         #endregion
         static void Main(string[] args)
         {
-            Proc52();
+            Proc58();
         }
     }
 }
