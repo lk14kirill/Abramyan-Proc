@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net.NetworkInformation;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
@@ -129,6 +130,29 @@ namespace Dz4
 
         #endregion
         #region Proc7
+        static void InvertDigits(ref int k)
+        {
+            int t = k;
+            k = 0;
+            while(t != 0)
+            {
+                k = k * 10 + (t % 10);
+                t /= 10;
+
+            }
+        }
+        static void Proc7()
+        {
+            for (int i = 0; i <= 5; i++)
+            {
+                int k = int.Parse(Console.ReadLine());
+                InvertDigits(ref k);
+                Console.WriteLine(k);
+
+            }
+        }
+
+
         #endregion
         #region Proc8
         #endregion
@@ -511,7 +535,7 @@ namespace Dz4
         #endregion
         static void Main(string[] args)
         {
-            Proc58();
+            Proc7();
         }
     }
 }
